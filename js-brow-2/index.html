@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>To do List</title>
+</head>
+<body>
+    <form action="">
+        <h1>TO DO LIST</h1>
+        <div class="addtask">
+        <input type="text" name="task" id="newTask" placeholder="New Task">
+        <button class="add" onclick="handleSubmit()">Add</button>
+    </div>
+    <div class="gradient"></div>
+    <div class="tasks">
+        <input type="checkbox" name="box" id="box">
+        <label for="box" class="tareas">Task 1</label>
+        <input type="checkbox" name="box" id="box">
+        <label for="box" class="tareas">Task 2</label>
+    </div>
+    
+    <button class="delete">Delete all done</button>
+    </form>
+
+    <script src="/todo.js"></script>
+</body>
+</html>

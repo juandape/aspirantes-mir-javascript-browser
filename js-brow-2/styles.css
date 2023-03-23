@@ -1,0 +1,80 @@
+form{
+ width: 300px;
+ padding: 20px;
+ border-radius: 10px;
+ margin: 0 auto;
+ background: whitesmoke;
+ box-shadow: 3px 3px 8px 5px gray;
+ font-weight: bold;
+}
+
+h1{
+    text-align: center;
+    color: teal
+}
+
+.addtask{
+    
+    text-align: center;
+    padding: 10px;
+}
+
+.add{
+    background-color:  teal;
+    color: white;
+    padding: 8px;
+    border-radius: 10%;
+    font-family:monospace;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.gradient{
+    padding: 1px;
+    background: linear-gradient(to right, teal, rgb(193, 193, 223));
+}
+
+#newTask{
+    padding: 8px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    border-color: rgb(232, 208, 208);
+}
+
+.tasks{
+    margin-top: 10px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-items: center;
+    row-gap: 1px;
+    /* background-color: gray; */
+}
+
+
+#box{
+    width: 25px;
+    height: 25px;
+    accent-color: teal;
+    background-color: whitesmoke;
+}
+
+
+.tareas{
+    color: rgb(20, 98, 98);
+    font-size: 20px;
+    /* padding-top: 15px; */
+    background-color: whitesmoke;
+}
+
+.delete{
+    background-color:  teal;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    font-family:monospace;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 75px;
+    margin-top: 15px
+}
