@@ -19,6 +19,10 @@
     </div>
     
     <button type="button" class="delete" onclick="handleDelete()">Delete all done</button>
+    <div class="filtros">
+        <button class="filter completed" onclick="showCompleted(event)">Show tasks completed</button>
+        <button class="filter pending" onclick="showPending(event)">Show tasks pending</button>
+    </div>
     </form>
 
     <script src="/todo.js"></script>

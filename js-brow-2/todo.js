@@ -75,3 +75,36 @@ const divG = document.querySelector("#task");
 divG.addEventListener("click", function (e) {
   completed(e);
 });
+
+//funcion show task completed
+const divShow = document.querySelector(".filtros")
+function showCompleted(event){
+  const lista = document.createElement("p")
+  lista.className = "compl"
+  divShow.appendChild(lista)
+  for (let i in tareas){
+    if(tareas[i].completed === true){
+      lista.innerHTML = `${lista.innerHTML} ${tareas[i].id}: ${tareas[i].Title}<br/>`
+    }
+    else{
+      event.preventDefault();
+    }
+  }
+  event.preventDefault();
+}
+
+//funcion show task pending
+function showPending(event){
+  const lista = document.createElement("p")
+  lista.className = "pend"
+  divShow.appendChild(lista)
+  for (let i in tareas){
+    if(tareas[i].completed === false){
+      lista.innerHTML = `${lista.innerHTML} ${tareas[i].id}: ${tareas[i].Title}<br/>`
+    }
+    else{
+      event.preventDefault();
+    }
+  }
+  event.preventDefault();
+}
