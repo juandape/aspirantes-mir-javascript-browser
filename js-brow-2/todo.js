@@ -7,28 +7,28 @@ const newT = document.querySelector(".tasks"); // seleccion div de tareas
 const tareas = [];
 let ident = 1;
 function handleSubmit(event) {
-  if(taskText.value === ""){
-    return
-  }
   const checkBox = document.createElement("input"); //creacion input
   const label = document.createElement("label"); //creacion label
   const newDiv = document.createElement("div");
-  checkBox.type = "checkbox";
-  checkBox.name = "box";
-  checkBox.id = "box";
-  checkBox.className = "box";
-  label.htmlFor = "box";
-  label.className = "tareas completed";
-  label.appendChild(document.createTextNode(taskText.value));
-  newT.appendChild(newDiv);
-  newDiv.className = "tasks";
-  newDiv.appendChild(checkBox);
-  newDiv.appendChild(label);
-  tareas.push({ id: ident, Title: taskText.value, completed: false });
-  ident += 1;
-  event.preventDefault(); //avoid to refresh page
+  if (taskText.value !== "") {
+    checkBox.type = "checkbox";
+    checkBox.name = "box";
+    checkBox.id = "box";
+    checkBox.className = "box";
+    label.htmlFor = "box";
+    label.className = "tareas completed";
+    label.appendChild(document.createTextNode(taskText.value));
+    newT.appendChild(newDiv);
+    newDiv.className = "tasks";
+    newDiv.appendChild(checkBox);
+    newDiv.appendChild(label);
+    tareas.push({ id: ident, Title: taskText.value, completed: false });
+    ident += 1;
+    event.preventDefault();
+  } else {
+    event.preventDefault(); //avoid to refresh page
+  }
 }
-
 //clean input field
 addTask.addEventListener("click", function () {
   taskText.value = "";
@@ -55,24 +55,23 @@ function handleCheckTask() {
 // funcion delete
 function handleDelete() {
   const checkBox = document.getElementsByName("box");
-  const labels = document.getElementsByClassName("completed")
-  for (let i in checkBox){
-    for (let j in labels){
-  if(checkBox[i].checked){
-    checkBox[i].remove()
-    labels[i].remove()
+  const labels = document.getElementsByClassName("completed");
+  for (let i in checkBox) {
+    for (let j in labels) {
+      if (checkBox[i].checked) {
+        checkBox[i].remove();
+        labels[i].remove();
+      }
+    }
   }
-}
-}
 }
 //funcion tachado
 function completed(e) {
-    if (e.target.type === "checkbox") {
-      e.target.parentNode.classList.toggle("is-completed") //muestra u oculta la propiedad
-    }
+  if (e.target.type === "checkbox") {
+    e.target.parentNode.classList.toggle("is-completed"); //muestra u oculta la propiedad
   }
-const divG = document.querySelector("#task")
-  divG.addEventListener("click", function(e) {
-    completed(e)
-  })
-
+}
+const divG = document.querySelector("#task");
+divG.addEventListener("click", function (e) {
+  completed(e);
+});
