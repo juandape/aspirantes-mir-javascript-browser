@@ -44,7 +44,6 @@ h1{
 .tasks{
     margin-top: 5px;
     margin-left: 10px;
-    align-items: center;
 }
 
 
@@ -53,7 +52,7 @@ h1{
     height: 25px;
     accent-color: teal;
     background-color: whitesmoke;
-    
+    vertical-align: middle;
 }
 
 
@@ -62,6 +61,7 @@ h1{
     font-size: 20px;
     background-color: whitesmoke;
     padding-left: 10px;
+    vertical-align: middle;
 }
 
 .delete{
