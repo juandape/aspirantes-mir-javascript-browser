@@ -7,6 +7,9 @@ const newT = document.querySelector(".tasks"); // seleccion div de tareas
 const tareas = [];
 let ident = 1;
 function handleSubmit(event) {
+  if(taskText.value === ""){
+    return
+  }
   const checkBox = document.createElement("input"); //creacion input
   const label = document.createElement("label"); //creacion label
   const newDiv = document.createElement("div");
