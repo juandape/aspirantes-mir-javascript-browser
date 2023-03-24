@@ -12,17 +12,13 @@
         <h1>TO DO LIST</h1>
         <div class="addtask">
         <input type="text" name="task" id="newTask" placeholder="New Task">
-        <button class="add" onclick="handleSubmit()">Add</button>
+        <button type="submit" class="add" onclick="handleSubmit(event)">Add</button>
     </div>
     <div class="gradient"></div>
-    <div class="tasks">
-        <input type="checkbox" name="box" id="box">
-        <label for="box" class="tareas">Task 1</label>
-        <input type="checkbox" name="box" id="box">
-        <label for="box" class="tareas">Task 2</label>
+    <div class="tasks" id="task" onclick="handleCheckTask()">
     </div>
     
-    <button class="delete">Delete all done</button>
+    <button type="button" class="delete" onclick="handleDelete()">Delete all done</button>
     </form>
 
     <script src="/todo.js"></script>

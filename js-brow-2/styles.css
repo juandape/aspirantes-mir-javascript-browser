@@ -10,7 +10,7 @@ form{
 
 h1{
     text-align: center;
-    color: teal
+    color: teal;
 }
 
 .addtask{
@@ -42,29 +42,26 @@ h1{
 }
 
 .tasks{
-    margin-top: 10px;
-    padding: 15px;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
+    margin-top: 5px;
+    margin-left: 10px;
     align-items: center;
-    row-gap: 1px;
-    /* background-color: gray; */
 }
 
 
-#box{
+.box{
     width: 25px;
     height: 25px;
     accent-color: teal;
     background-color: whitesmoke;
+    
 }
 
 
 .tareas{
     color: rgb(20, 98, 98);
     font-size: 20px;
-    /* padding-top: 15px; */
     background-color: whitesmoke;
+    padding-left: 10px;
 }
 
 .delete{
@@ -77,4 +74,9 @@ h1{
     font-size: 15px;
     margin-left: 75px;
     margin-top: 15px
+}
+
+.is-completed{
+    text-decoration: line-through;
+    color: teal;
 }
