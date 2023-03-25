@@ -3,30 +3,31 @@ const form = document.querySelector("form");
 const name = document.querySelector("#name");
 const email = document.querySelector("#email")
 const section = document.querySelector("section");
-
+const datos = {}
 // Manejar el evento de enviar el formulario
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  localStorage.setItem("name", name.value);
-  localStorage.setItem("email", email.value)
+  datos.name = name.value
+  datos.email = email.value
+  localStorage.setItem("datos", JSON.stringify(datos));
+  
 });
 
 // Función para mostrar el nombre guardado en localStorage
+localStorage.getItem("datos")
+const muestra = JSON.parse(localStorage.getItem("datos"))
 function showName() {
-  const show1 = document.querySelector(".nombre");
-  const show2 = document.querySelector(".email")
+  const show = document.querySelector(".mostrar");
   if (localStorage.length === 0) {
-    show1.textContent = `Sin datos`;
+    show.textContent = `Sin datos`;
   } else {
-    show1.textContent = `Nombre guardado en el LocalStorage: ${localStorage.name}`;
-    show2.textContent = `Email guardado en el LocalStorage: ${localStorage.email}`
+    show.textContent = `Nombre en localStorage: ${muestra.name}.    Email en localStorage: ${muestra.email} `
   }
 }
 
 // Función para borrar el nombre guardado en localStorage
 function deleteName() {
-    localStorage.removeItem("name")
-    localStorage.removeItem("email")
+    localStorage.removeItem("datos")
 }
 
 // Mostrar el nombre guardado al cargar la página
