@@ -1,15 +1,17 @@
 ul {
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(91, 8, 39);
   display: inline-block;
   position: relative;
+  color: rgb(91, 8, 39);
 }
 
-li:hover{
-    color:burlywood;
-}
+/* .elemento{
+} */
 
-li:checked ~ ul{
-display: none;
+/* .elemento--mostrar{
+} */
+
+.name--ocultar{
+    color: rgb(71, 246, 44);
 }
