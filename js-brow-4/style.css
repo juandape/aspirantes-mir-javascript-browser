@@ -1,12 +1,15 @@
-ul{
-    font-size: 18px;
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- color: rgb(91, 8, 39);   
-}
-.name{
-    font-size: 21px;
+ul {
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(91, 8, 39);
+  display: inline-block;
+  position: relative;
 }
 
-.items{
-    display: none;
+li:hover{
+    color:burlywood;
+}
+
+li:checked ~ ul{
+display: none;
 }
