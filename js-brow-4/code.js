@@ -65,32 +65,28 @@ const menu = [
     ],
   },
 ];
-const createul = document.createElement("ul")
-createul.className = "list"
-document.body.appendChild(createul)
+// document.body.appendChild(createul);
 
-function list(menu){
-  for (let i in menu){
-  const createli = document.createElement("li")
-  const createli2 = document.createElement("li")
-  const createli3 = document.createElement("li")
-  createli.className = "name"
-  createli2.className = "link"
-  createli3.className = "items"
-  createli.textContent = menu[i].name
-  createli2.textContent = menu[i].link
-  createul.appendChild(createli)
-  createul.appendChild(createli2)
-  if(menu[i].items.length === 0){
-    createli3.textContent = menu[i].items
-    createul.appendChild(createli3)
+function list(menu) {
+  const createul = document.createElement("ul");
+  createul.className = "list";
+  for (let i in menu) {
+    const createli = document.createElement("li");
+    const createli2 = document.createElement("li");
+    const createli3 = document.createElement("li");
+    createli.className = "name";
+    createli2.className = "link";
+    createli3.className = "items";
+    createli.textContent = menu[i].name;
+    createli2.textContent = menu[i].link;
+    createul.appendChild(createli);
+    createul.appendChild(createli2);
+    if (menu[i].items.length > 0) {
+      createli3.textContent = list(menu[i].items);
+      createul.appendChild(list(menu[i].items))
+    }
   }
-  else{
-    // createli3.appendChild(createul)
-    createli3.textContent = list(menu[i].items)
-  }
-  }
-  
+  return createul
 }
 
-document.body.appendChild(list(menu))
+document.body.appendChild(list(menu));
