@@ -4,14 +4,22 @@ ul {
   display: inline-block;
   position: relative;
   color: rgb(91, 8, 39);
+  list-style: none;
 }
 
-/* .elemento{
-} */
+.name--ocultar {
+  font-weight: bold;
+}
 
-/* .elemento--mostrar{
-} */
+.link {
+  display: none;
+}
 
-.name--ocultar{
-    color: rgb(71, 246, 44);
+.boton {
+  background-color: whitesmoke;
+  color: rgb(91, 8, 39);
+  font-size: 12px;
+  font-weight: bold;
+  font-family: fira code;
+  border-color: white;
 }

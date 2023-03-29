@@ -75,12 +75,22 @@ function list(menu) {
   for (let i in menu) {
     const createli = document.createElement("li");
     const createli2 = document.createElement("li");
-    createli.className = "name elemento";
-    createli2.className = "link elemento";
+    createli.className = "name";
+    createli2.className = "link";
     createli.textContent = menu[i].name;
     createli2.textContent = menu[i].link;
     createul.appendChild(createli);
     createul.appendChild(createli2);
+
+    //boton
+    const boton = document.createElement("button")
+    boton.className = "boton"
+    boton.innerText = "=>"
+    createli.insertBefore(boton, createli.firstChild)
+    boton.addEventListener("click", function(){
+      createli2.classList.toggle("link")
+    })
+
     if (menu[i].items.length > 0) {
       createul.appendChild(list(menu[i].items));
     }
@@ -92,7 +102,7 @@ document.body.appendChild(list(menu));
 
 
 //cambio de color
-let change = document.querySelectorAll("li")
+const change = document.querySelectorAll("li")
 for (let i=0; i<change.length; i++){
 change[i].addEventListener("click", function(){
   change[i].classList.toggle("name--ocultar")
