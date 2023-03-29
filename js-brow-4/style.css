@@ -1,0 +1,12 @@
+ul{
+    font-size: 18px;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ color: rgb(91, 8, 39);   
+}
+.name{
+    font-size: 21px;
+}
+
+.items{
+    display: none;
+}

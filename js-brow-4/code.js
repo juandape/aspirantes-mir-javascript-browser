@@ -73,20 +73,17 @@ function list(menu) {
   for (let i in menu) {
     const createli = document.createElement("li");
     const createli2 = document.createElement("li");
-    const createli3 = document.createElement("li");
     createli.className = "name";
     createli2.className = "link";
-    createli3.className = "items";
     createli.textContent = menu[i].name;
     createli2.textContent = menu[i].link;
     createul.appendChild(createli);
     createul.appendChild(createli2);
     if (menu[i].items.length > 0) {
-      createli3.textContent = list(menu[i].items);
-      createul.appendChild(list(menu[i].items))
+      createul.appendChild(list(menu[i].items));
     }
   }
-  return createul
+  return createul;
 }
 
 document.body.appendChild(list(menu));
