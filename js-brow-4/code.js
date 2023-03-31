@@ -88,6 +88,7 @@ function list(menu) {
 
     boton.addEventListener("click", function () {
       createli2.classList.toggle("link");
+      ul()
     });
 
     if (menu[i].items.length > 0) {
@@ -108,18 +109,13 @@ for (let i = 0; i < change.length; i++) {
 }
 
 //boton
-const ulSelect = document.getElementsByTagName("ul");
+const ulSelect = document.querySelectorAll("ul");
 for (let i = 1; i < ulSelect.length; i++) {
   ulSelect[i].className = "ulhidden";
-  
 }
-const boton2 = document.getElementsByClassName("boton");
-for (let j in boton2) {
-  boton2[j].addEventListener("click", function () {
-    for (let i = 1; i < ulSelect.length; i++) {
-      // ulSelect[i].className = "ulhidden";
-      ulSelect[i].classList.toggle("ulhidden")
-      
-    }
-  });
+function ul() {
+  for (let i = 0; i < ulSelect.length; i++) {
+    ulSelect[i].classList.toggle("ulhidden");
+  }
+  return ulSelect;
 }
