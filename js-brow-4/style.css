@@ -7,7 +7,7 @@ ul {
   list-style: none;
 }
 
-.name--ocultar {
+.color--ocultar {
   font-weight: bold;
 }
 
@@ -15,6 +15,13 @@ ul {
   display: none;
 }
 
+.ulhidden{
+    display: none;
+}
+
+.list{
+    display: block;
+}
 .boton {
   background-color: whitesmoke;
   color: rgb(91, 8, 39);

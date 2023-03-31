@@ -66,8 +66,6 @@ const menu = [
   },
 ];
 
-
-
 //creacion de lista
 function list(menu) {
   const createul = document.createElement("ul");
@@ -75,7 +73,7 @@ function list(menu) {
   for (let i in menu) {
     const createli = document.createElement("li");
     const createli2 = document.createElement("li");
-    createli.className = "name";
+    createli.className = "name color";
     createli2.className = "link";
     createli.textContent = menu[i].name;
     createli2.textContent = menu[i].link;
@@ -83,13 +81,14 @@ function list(menu) {
     createul.appendChild(createli2);
 
     //boton
-    const boton = document.createElement("button")
-    boton.className = "boton"
-    boton.innerText = "=>"
-    createli.insertBefore(boton, createli.firstChild)
-    boton.addEventListener("click", function(){
-      createli2.classList.toggle("link")
-    })
+    const boton = document.createElement("button");
+    boton.className = "boton";
+    boton.innerText = "=>";
+    createli.insertBefore(boton, createli.firstChild);
+
+    boton.addEventListener("click", function () {
+      createli2.classList.toggle("link");
+    });
 
     if (menu[i].items.length > 0) {
       createul.appendChild(list(menu[i].items));
@@ -100,11 +99,27 @@ function list(menu) {
 
 document.body.appendChild(list(menu));
 
-
 //cambio de color
-const change = document.querySelectorAll("li")
-for (let i=0; i<change.length; i++){
-change[i].addEventListener("click", function(){
-  change[i].classList.toggle("name--ocultar")
-} )
+const change = document.querySelectorAll("li");
+for (let i = 0; i < change.length; i++) {
+  change[i].addEventListener("click", function () {
+    change[i].classList.toggle("color--ocultar");
+  });
+}
+
+//boton
+const ulSelect = document.getElementsByTagName("ul");
+for (let i = 1; i < ulSelect.length; i++) {
+  ulSelect[i].className = "ulhidden";
+  
+}
+const boton2 = document.getElementsByClassName("boton");
+for (let j in boton2) {
+  boton2[j].addEventListener("click", function () {
+    for (let i = 1; i < ulSelect.length; i++) {
+      // ulSelect[i].className = "ulhidden";
+      ulSelect[i].classList.toggle("ulhidden")
+      
+    }
+  });
 }
