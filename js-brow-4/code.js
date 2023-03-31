@@ -88,7 +88,6 @@ function list(menu) {
 
     boton.addEventListener("click", function () {
       createli2.classList.toggle("link");
-      ul()
     });
 
     if (menu[i].items.length > 0) {
@@ -108,14 +107,3 @@ for (let i = 0; i < change.length; i++) {
   });
 }
 
-//boton
-const ulSelect = document.querySelectorAll("ul");
-for (let i = 1; i < ulSelect.length; i++) {
-  ulSelect[i].className = "ulhidden";
-}
-function ul() {
-  for (let i = 0; i < ulSelect.length; i++) {
-    ulSelect[i].classList.toggle("ulhidden");
-  }
-  return ulSelect;
-}
